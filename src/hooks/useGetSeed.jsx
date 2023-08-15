@@ -13,10 +13,6 @@ export const useGetSeed = (id) => {
         args: [id]
       })
     
-      console.log(data)
-      console.log(error)
-      console.log(isLoading)
-
     return data
 
 }

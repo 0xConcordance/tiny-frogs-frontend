@@ -68,9 +68,10 @@ function App() {
 
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
-        <ConnectButton />
 
-        <center>
+          <center>
+          <ConnectButton />
+
           <Holdings />
         </center>
       </RainbowKitProvider>

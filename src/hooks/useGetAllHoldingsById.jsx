@@ -12,7 +12,8 @@ export const useGetAllHoldingById = (address) => {
         address: ContractAddress,
         abi: ABI,
         functionName: 'tokensOfOwner',
-        args: [address]
+        args: [address],
+        watch:true
       })
 
     console.log(data)
