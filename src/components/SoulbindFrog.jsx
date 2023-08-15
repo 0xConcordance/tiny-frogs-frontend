@@ -16,7 +16,6 @@ export const SoulbindFrogButton = (props) => {
     return(
         <div>
         <Button onClick={write}>Soulbind: {props.id}</Button>
-        <p>{data}</p>
         </div>
     )
 

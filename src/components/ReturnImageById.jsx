@@ -24,9 +24,11 @@ export const ReturnImageById = (props) => {
 
       // replace the width and height with empty 
 
+    
+    if(data == undefined) {
+        return(<p>Image not rendered</p>)
+    } else {
     let string_image = data.replace('width="512"', 'height="auto"');
-
-
 
     const dataString = { __html: string_image}
           
@@ -36,7 +38,7 @@ export const ReturnImageById = (props) => {
             <p className="idfor">id: {props.id}</p>
         </div>
         )
-
+    }
     
     
 

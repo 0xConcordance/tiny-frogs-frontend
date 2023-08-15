@@ -10,7 +10,8 @@ export const useGetSeed = (id) => {
         address: ContractAddress,
         abi: ABI,
         functionName: 'seeds',
-        args: [id]
+        args: [id],
+        watch:true
       })
     
     return data

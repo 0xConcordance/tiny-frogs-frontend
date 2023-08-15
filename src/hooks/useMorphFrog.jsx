@@ -17,7 +17,6 @@ export const MorphFrogButton = (props) => {
     return(
         <div>
         <Button onClick={write}>Morph: {props.id}</Button>
-        <p>{data}</p>
         </div>
     )
 
