@@ -10,9 +10,8 @@ import {
   base
 } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
-import { Holdings } from './components/Holdings';
 
-import { MenuList, MenuListItem, Separator, styleReset } from 'react95';
+import { styleReset } from 'react95';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 /* Pick a theme of your choice */
@@ -22,7 +21,6 @@ import original from 'react95/dist/themes/original';
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 import { Dapp } from './components/Dapp';
-
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -49,6 +47,7 @@ const { chains, publicClient } = configureChains(
     publicProvider()
   ]
 );
+
 const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
   projectId: 'fb6c3edd1d475f8059eb4711a48113ae',
@@ -60,11 +59,7 @@ const wagmiConfig = createConfig({
   publicClient
 })
 
-
-
 function App() {
-
-
 
   return (
     <>

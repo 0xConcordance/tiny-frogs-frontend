@@ -3,7 +3,7 @@ import { HoldingsComp } from "./HoldingsComp"
 
 export const Holdings = () => {
 
-    const { address, isConnecting, isDisconnected, isConnected } = useAccount()
+    const { isConnected } = useAccount()
     console.log("addresssss")
 
     return(
