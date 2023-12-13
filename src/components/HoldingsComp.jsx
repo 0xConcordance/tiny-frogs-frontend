@@ -44,8 +44,8 @@ export const HoldingsComp = () => {
             {holdings.map(
             holding => (    
                 
-                <div onClick={() => selectToken(Number(holding))} className="col-sm-3">
-                    <ReturnImageById className='image' id={Number(holding)} />
+                <div onClick={() => selectToken(holding.toString())} className="col-sm-3">
+                    <ReturnImageById className='image' id={holding.toString()} />
                 </div>
 
                 )
