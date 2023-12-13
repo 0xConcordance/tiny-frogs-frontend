@@ -12,7 +12,7 @@ export const HoldingsComp = () => {
     const { address, isConnecting, isDisconnected } = useAccount()
 
     const holdings = useGetAllHoldingById(address)
-    const [selectedFrog, setSelectedFrog] = useState()
+    const [selectedFrog, setSelectedFrog] = useState(0)
 
     const selectToken = (holding) => {
 
