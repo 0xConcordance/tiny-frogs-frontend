@@ -21,6 +21,7 @@ import original from 'react95/dist/themes/original';
 /* Original Windows95 font (optional) */
 import ms_sans_serif from 'react95/dist/fonts/ms_sans_serif.woff2';
 import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
+import { Dapp } from './components/Dapp';
 
 
 const GlobalStyles = createGlobalStyle`
@@ -50,7 +51,7 @@ const { chains, publicClient } = configureChains(
 );
 const { connectors } = getDefaultWallets({
   appName: 'My RainbowKit App',
-  projectId: 'YOUR_PROJECT_ID',
+  projectId: 'fb6c3edd1d475f8059eb4711a48113ae',
   chains
 });
 const wagmiConfig = createConfig({
@@ -72,15 +73,8 @@ function App() {
 
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains}>
+      <Dapp />
 
-          <center>
-          
-          <ConnectButton />
-
-            <Holdings />
-
-
-        </center>
       </RainbowKitProvider>
 
     </WagmiConfig>
