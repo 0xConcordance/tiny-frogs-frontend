@@ -9,7 +9,7 @@ import { SoulbindFrogButton } from "./SoulbindFrog"
 
 export const HoldingsComp = () => {
 
-    const { address, isConnecting, isDisconnected } = useAccount()
+    const { address, isConnecting, isDisconnected, isConnected } = useAccount()
 
     const holdings = useGetAllHoldingById(address.toString())
     const [selectedFrog, setSelectedFrog] = useState(0)
@@ -37,22 +37,29 @@ export const HoldingsComp = () => {
         return( 
         <Window className="holdings-main">
             <WindowHeader>Tiny_based_frogs.exe</WindowHeader>
+
+            {isConnected ? (
             <div className="row">
  
-                {holdings.map(
-                holding => (    
-                    
-                    <div onClick={() => selectToken(Number(holding))} className="col-sm-3">
-                        <ReturnImageById className='image' id={Number(holding)} />
-                    </div>
+            {holdings.map(
+            holding => (    
+                
+                <div onClick={() => selectToken(Number(holding))} className="col-sm-3">
+                    <ReturnImageById className='image' id={Number(holding)} />
+                </div>
 
-                    )
-                )}
-            
-            <MorphFrogButton className="leftButton" id={selectedFrog.toString()} />
-            <SoulbindFrogButton className="leftButton" id={selectedFrog.toString()} />
+                )
+            )}
+        
+        <MorphFrogButton className="leftButton" id={selectedFrog.toString()} />
+        <SoulbindFrogButton className="leftButton" id={selectedFrog.toString()} />
 
-            </div>
+        </div>
+
+            ): (
+                <p></p>
+            )}
+
         </Window>
     )
 }}
