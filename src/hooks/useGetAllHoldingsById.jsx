@@ -12,7 +12,7 @@ export const useGetAllHoldingById = (address) => {
         address: ContractAddress,
         abi: ABI,
         functionName: 'tokensOfOwner',
-        args: [address],
+        args: [address.toString()],
         watch:true
       })
 
