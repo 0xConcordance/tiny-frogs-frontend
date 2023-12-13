@@ -27,8 +27,13 @@ export const HoldingsComp = () => {
         setSelectedFrog(holding)
     }}
 
-    if (holdings == undefined) {console.log('loading')} else {
-    
+    if (holdings == undefined) {
+        return(
+            <p>Loading</p>
+        )
+    } 
+    else {
+
         return( 
         <Window className="holdings-main">
             <WindowHeader>Tiny_based_frogs.exe</WindowHeader>
@@ -44,8 +49,8 @@ export const HoldingsComp = () => {
                     )
                 )}
             
-            <MorphFrogButton className="leftButton" id={selectedFrog} />
-            <SoulbindFrogButton className="leftButton" id={selectedFrog} />
+            <MorphFrogButton className="leftButton" id={selectedFrog.toString()} />
+            <SoulbindFrogButton className="leftButton" id={selectedFrog.toString()} />
 
             </div>
         </Window>
