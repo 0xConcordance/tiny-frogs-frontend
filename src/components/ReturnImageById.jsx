@@ -11,7 +11,7 @@ import { useContractRead } from 'wagmi'
 
 export const ReturnImageById = (props) => {
 
-    let seed = useGetSeed(props.id)
+    let seed = useGetSeed(props.id).toString()
 
     const { data, isError, isLoading, error } = useContractRead({
         address: ContractAddress,

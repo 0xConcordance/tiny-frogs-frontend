@@ -5,10 +5,7 @@ export const Dapp = () => {
 
     return(
         <center>
-          
           <Holdings />
-
-
       </center>
 
     )

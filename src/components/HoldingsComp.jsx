@@ -11,7 +11,7 @@ export const HoldingsComp = () => {
 
     const { address, isConnecting, isDisconnected } = useAccount()
 
-    const holdings = useGetAllHoldingById(address)
+    const holdings = useGetAllHoldingById(address.toString())
     const [selectedFrog, setSelectedFrog] = useState(0)
 
     const selectToken = (holding) => {
@@ -19,7 +19,7 @@ export const HoldingsComp = () => {
         // check if the frog is already selected
         if(holding == selectedFrog) {
             // deselect frog
-            setSelectedFrog()
+            setSelectedFrog(0)
             console.log("deselect")
         } else {
 
