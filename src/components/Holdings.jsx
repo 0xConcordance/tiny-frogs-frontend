@@ -3,13 +3,17 @@ import { HoldingsComp } from "./HoldingsComp"
 
 export const Holdings = () => {
 
-    const { address, isConnecting, isDisconnected } = useAccount()
+    const { address, isConnecting, isDisconnected, isConnected } = useAccount()
     console.log("addresssss")
 
-    if(address != undefined) {
-        return(
-            <HoldingsComp />
-        ) 
-    } else {
-        return(<p></p>)
-    }}
+    return(
+        <div>
+            {isConnected ? (
+                <HoldingsComp />
+            ) : (
+                <></>
+            )}
+        </div>
+    )    
+
+}

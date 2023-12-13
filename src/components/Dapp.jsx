@@ -6,8 +6,6 @@ export const Dapp = () => {
     return(
         <center>
           
-        <ConnectButton />
-
           <Holdings />
 
 
