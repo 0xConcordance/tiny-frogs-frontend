@@ -16,9 +16,6 @@ export const useGetAllHoldingById = (address) => {
         watch:true
       })
 
-    console.log(data)
-    console.log(error)
-
     return data
 
 }

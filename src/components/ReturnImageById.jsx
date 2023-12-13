@@ -13,8 +13,6 @@ export const ReturnImageById = (props) => {
 
     let seed = useGetSeed(props.id)
 
-    // check if seed was already gotten
-
     const { data, isError, isLoading, error } = useContractRead({
         address: ContractAddress,
         abi: ABI,

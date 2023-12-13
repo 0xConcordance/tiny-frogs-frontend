@@ -6,48 +6,16 @@ import { useState } from "react"
 
 import { MorphFrogButton, useMorphFrog } from "../hooks/useMorphFrog"
 import { SoulbindFrogButton } from "./SoulbindFrog"
+import { HoldingsComp } from "./HoldingsComp"
 
 export const Holdings = () => {
 
     const { address, isConnecting, isDisconnected } = useAccount()
 
-    const holdings = useGetAllHoldingById(address)
-    const [selectedFrog, setSelectedFrog] = useState()
-
-
-    const selectToken = (holding) => {
-
-        // check if the frog is already selected
-        if(holding == selectedFrog) {
-            // deselect frog
-            setSelectedFrog()
-            console.log("deselect")
-        } else {
-
-        console.log(holding)
-        setSelectedFrog(holding)
+    if(address != undefined) {
+        return(
+            <HoldingsComp />
+        ) 
+    } else {
+        return(<p></p>)
     }}
-
-    if (holdings == undefined) {console.log('loading')} else {
-    return( 
-        <Window className="holdings-main">
-            <WindowHeader>Tiny_based_frogs.exe</WindowHeader>
-            <div className="row">
- 
-                {holdings.map(
-                holding => (    
-                    
-                    <div onClick={() => selectToken(Number(holding))} className="col-sm-3">
-                        <ReturnImageById className='image' id={Number(holding)} />
-                    </div>
-
-                    )
-                )}
-            
-            <MorphFrogButton className="leftButton" id={selectedFrog} />
-            <SoulbindFrogButton className="leftButton" id={selectedFrog} />
-
-            </div>
-        </Window>
-    )
-}}

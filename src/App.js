@@ -5,7 +5,7 @@ import {
   getDefaultWallets,
   RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, WagmiConfig } from 'wagmi';
+import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
 import {
   base
 } from 'wagmi/chains';
@@ -63,6 +63,8 @@ const wagmiConfig = createConfig({
 
 function App() {
 
+
+
   return (
     <>
     <GlobalStyles />
@@ -72,6 +74,7 @@ function App() {
       <RainbowKitProvider chains={chains}>
 
           <center>
+          
           <ConnectButton />
 
             <Holdings />
